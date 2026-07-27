@@ -1,24 +1,31 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { useEffect, useRef } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { dayTimeline } from "@/data/site";
 import { SectionTitle } from "@/components/common/SectionTitle";
+import { cn } from "@/lib/utils";
 
-function TimelineIcon({ name, title }: { name: string; title: string }) {
+const TIMELINE_CARD_ACTIVE_MS = 2000;
+const TIMELINE_LINE_TRAVEL_MS = 900;
+
+function TimelineIcon({ name, title, isActive }: { name: string; title: string; isActive: boolean }) {
   const icon = getTimelineIcon(name);
 
   return (
     <div
       aria-label={title}
-      className="day-activity-icon group relative mx-auto grid h-[5.25rem] w-[5.25rem] place-items-center rounded-full border border-white/90 bg-white text-forest shadow-[inset_0_1px_0_rgba(255,255,255,0.96),0_22px_58px_-36px_rgba(13,79,60,0.58)] transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:bg-[#fffdf8] hover:text-forest-deep hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.98),0_28px_62px_-34px_rgba(13,79,60,0.62)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/55 focus-visible:ring-offset-4 focus-visible:ring-offset-[#eaf6ff]"
+      className={cn(
+        "day-activity-icon group relative mx-auto grid h-[5.25rem] w-[5.25rem] place-items-center rounded-full border border-white/90 bg-white text-forest shadow-[inset_0_1px_0_rgba(255,255,255,0.96),0_22px_58px_-36px_rgba(13,79,60,0.58)] transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:bg-[#fffdf8] hover:text-forest-deep hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.98),0_28px_62px_-34px_rgba(13,79,60,0.62)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/55 focus-visible:ring-offset-4 focus-visible:ring-offset-[#eaf6ff]",
+        isActive && "is-active",
+      )}
       role="img"
       tabIndex={0}
     >
-      <span className="pointer-events-none absolute inset-1 rounded-full bg-[radial-gradient(circle_at_36%_22%,rgba(217,164,65,0.18),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
-      <span className="pointer-events-none absolute -inset-1 rounded-full border border-gold/0 transition duration-300 group-hover:border-gold/24" />
+      <span className="day-activity-icon__glow pointer-events-none absolute inset-1 rounded-full bg-[radial-gradient(circle_at_36%_22%,rgba(217,164,65,0.18),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+      <span className="day-activity-icon__ring pointer-events-none absolute -inset-1 rounded-full border border-gold/0 transition duration-300 group-hover:border-gold/24" />
       {icon}
     </div>
   );
@@ -129,6 +136,8 @@ function getTimelineIcon(name: string) {
 
 export function DayTimeline() {
   const ref = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [flowingIndex, setFlowingIndex] = useState<number | null>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -153,6 +162,36 @@ export function DayTimeline() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (reduceMotion.matches) {
+      return undefined;
+    }
+
+    let advanceTimer: number | undefined;
+    const flowTimer = window.setTimeout(() => {
+      if (activeIndex >= dayTimeline.length - 1) {
+        setActiveIndex(0);
+        return;
+      }
+
+      setFlowingIndex(activeIndex);
+      advanceTimer = window.setTimeout(() => {
+        setFlowingIndex(null);
+        setActiveIndex(activeIndex + 1);
+      }, TIMELINE_LINE_TRAVEL_MS);
+    }, TIMELINE_CARD_ACTIVE_MS);
+
+    return () => {
+      window.clearTimeout(flowTimer);
+
+      if (advanceTimer) {
+        window.clearTimeout(advanceTimer);
+      }
+    };
+  }, [activeIndex]);
+
   return (
     <section id="day-at-sri-sri-academy" className="relative isolate overflow-hidden bg-[#eaf6ff] py-20" ref={ref}>
       <div
@@ -164,11 +203,21 @@ export function DayTimeline() {
         <div className="-mx-4 mt-9 snap-x overflow-x-auto px-4 pb-4 pt-7 [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 [&::-webkit-scrollbar]:hidden">
           <div className="grid min-w-[980px] grid-cols-9 items-start gap-4">
             {dayTimeline.map((item, index) => (
-              <div key={item.title} data-timeline-item className="relative min-h-[9.75rem] snap-center text-center">
+              <div
+                key={item.title}
+                data-timeline-item
+                className={cn("relative min-h-[9.75rem] snap-center text-center", activeIndex === index && "is-active")}
+              >
                 {index < dayTimeline.length - 1 ? (
-                  <div className="absolute left-[64%] top-10 h-px w-[72%] border-t border-dashed border-forest/28" />
+                  <div
+                    className={cn("day-timeline-connector absolute left-[64%] top-10 h-px w-[72%]", flowingIndex === index && "is-active")}
+                    style={{ "--day-flow-duration": `${TIMELINE_LINE_TRAVEL_MS}ms` } as CSSProperties}
+                  >
+                    <span className="day-timeline-connector__track" />
+                    <span className="day-timeline-connector__flow" />
+                  </div>
                 ) : null}
-                <TimelineIcon name={item.animatedIcon} title={item.title} />
+                <TimelineIcon name={item.animatedIcon} title={item.title} isActive={activeIndex === index} />
                 <p className="mt-5 text-xs font-extrabold text-charcoal">{item.time}</p>
                 <p className="mt-1 text-sm font-semibold leading-tight text-forest">{item.title}</p>
               </div>
