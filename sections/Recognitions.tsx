@@ -1,25 +1,43 @@
 import { recognitions } from "@/data/site";
-import { SectionTitle } from "@/components/common/SectionTitle";
+import { RecognitionSeal } from "@/components/common/RecognitionSeal";
 
 export function Recognitions() {
-  const repeated = [...recognitions, ...recognitions];
-
   return (
-    <section className="py-16">
+    <section
+      className="border-y border-forest/[0.08] bg-white/88 py-10 sm:py-12"
+      aria-labelledby="recognitions-heading"
+    >
       <div className="container-lux">
-        <div className="rounded-[24px] border border-forest/10 bg-white px-4 py-8 shadow-[0_24px_70px_-48px_rgba(13,79,60,0.5)]">
-          <SectionTitle align="center" title="Recognitions & Affiliations" />
-          <div className="mt-8 overflow-hidden">
-            <div className="flex min-w-max animate-[logo-scroll_28s_linear_infinite] gap-4">
-              {repeated.map((item, index) => (
-                <div key={`${item.label}-${index}`} className="flex min-w-56 items-center gap-4 rounded-[20px] border border-forest/10 bg-cream/60 px-5 py-4">
-                  <div className="grid h-12 w-12 place-items-center rounded-full bg-white text-forest">
-                    <item.icon className="h-6 w-6" strokeWidth={1.7} />
-                  </div>
-                  <p className="text-sm font-bold leading-tight text-forest">{item.label}</p>
-                </div>
-              ))}
-            </div>
+        <h2
+          id="recognitions-heading"
+          className="text-center font-serif text-[1.7rem] font-semibold leading-none tracking-[-0.02em] text-forest sm:text-[2rem]"
+        >
+          Recognitions &amp; Affiliations
+        </h2>
+
+        <div className="recognition-marquee mt-8 overflow-hidden lg:mt-9">
+          <div className="recognition-track">
+            {[false, true].map((isDuplicate) => (
+              <div
+                key={isDuplicate ? "duplicate" : "primary"}
+                className="recognition-group grid grid-cols-6"
+                aria-hidden={isDuplicate || undefined}
+              >
+                {recognitions.map((item) => (
+                  <article
+                    key={`${isDuplicate ? "duplicate-" : ""}${item.label}`}
+                    className="recognition-item flex min-h-40 flex-col items-center justify-center px-3 py-5 text-center sm:px-5 lg:min-h-36 lg:py-2"
+                  >
+                    <div className="h-[5.15rem] w-[5.15rem] shrink-0 transition-transform duration-500 ease-out hover:scale-[1.04] lg:h-[5.5rem] lg:w-[5.5rem]">
+                      <RecognitionSeal kind={item.mark} />
+                    </div>
+                    <p className="mt-3 max-w-[9.5rem] text-[0.82rem] font-semibold leading-[1.25] tracking-[-0.01em] text-charcoal/88 sm:text-sm">
+                      {item.label}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>

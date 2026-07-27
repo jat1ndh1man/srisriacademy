@@ -1,16 +1,12 @@
 import {
-  Award,
   BedDouble,
   Bot,
   Dumbbell,
   GraduationCap,
   HeartHandshake,
-  Leaf,
-  Medal,
-  ShieldCheck,
   Sparkles,
-  Trophy,
 } from "lucide-react";
+import type { RecognitionSealKind } from "@/components/common/RecognitionSeal";
 
 export type HeroSlide = {
   id: string;
@@ -200,45 +196,45 @@ export const dayTimeline = [
 ];
 
 export const campusGallery = [
-  { title: "Smart Classrooms", image: "/images/campus-classroom.svg", span: "md:row-span-2" },
-  { title: "Science & Robotics Labs", image: "/images/campus-labs.svg", span: "" },
-  { title: "Sports Complex", image: "/images/campus-sports.svg", span: "md:row-span-2" },
-  { title: "Library", image: "/images/campus-library.svg", span: "" },
-  { title: "Residential Hostel", image: "/images/campus-hostel.svg", span: "" },
-  { title: "Dining Hall", image: "/images/campus-dining.svg", span: "" },
+  { title: "Smart Classrooms", image: "/images/home-fourth-section/campus-smart-classroom.png" },
+  { title: "Science & Robotics Labs", image: "/images/home-fourth-section/campus-science-robotics-lab.png" },
+  { title: "Sports Complex", image: "/images/home-fourth-section/campus-sports-complex.png" },
+  { title: "Library", image: "/images/home-fourth-section/campus-library.png" },
+  { title: "Residential Hostel", image: "/images/home-fourth-section/campus-residential-hostel.png" },
+  { title: "Dining Hall", image: "/images/home-fourth-section/campus-dining-hall.png" },
 ];
 
 export const achievements = [
   {
     title: "Student Achievers",
     kicker: "Our stars shine bright",
-    image: "/images/student-achiever.svg",
+    image: "/images/home-fourth-section/card-student-achiever.png",
     accent: "from-[#fff6e5] to-[#f8d7d7]",
     points: ["CBSE topper with 96.4%", "National sports gold medal", "Science Olympiad national winner", "Young author published book"],
   },
   {
     title: "Sports Without Limits",
     kicker: "Play. Compete. Excel.",
-    image: "/images/sports-achiever.svg",
+    image: "/images/home-fourth-section/card-sports-football.png",
     accent: "from-[#eff8e8] to-[#dff1c5]",
     points: ["Football", "Swimming", "Archery", "Skating", "Cricket", "Basketball"],
   },
   {
     title: "Creative Minds",
     kicker: "Express. Create. Inspire.",
-    image: "/images/creative-minds.svg",
+    image: "/images/home-fourth-section/card-creative-violin.png",
     accent: "from-[#fff1ef] to-[#fde9c8]",
     points: ["Music", "Dance", "Art", "Drama", "Photography", "Clubs & more"],
   },
 ];
 
-export const recognitions = [
-  { label: "CBSE Affiliated", icon: GraduationCap },
-  { label: "Art of Living Education", icon: Leaf },
-  { label: "SSRVM Trusted Legacy", icon: ShieldCheck },
-  { label: "ISO Certified", icon: Award },
-  { label: "AICTE Recognized", icon: Medal },
-  { label: "Various Awards & Honors", icon: Trophy },
+export const recognitions: Array<{ label: string; mark: RecognitionSealKind }> = [
+  { label: "CBSE Affiliated", mark: "cbse" },
+  { label: "Art of Living Education", mark: "art-of-living" },
+  { label: "SSRVM Trusted Legacy", mark: "legacy" },
+  { label: "ISO 9001 Certified", mark: "iso" },
+  { label: "AICTE Recognized", mark: "aicte" },
+  { label: "Various Awards & Honors", mark: "awards" },
 ];
 
 export const testimonials = [

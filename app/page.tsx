@@ -2,11 +2,8 @@ import { AdmissionsCTA } from "@/sections/AdmissionsCTA";
 import { CampusMasonry } from "@/sections/CampusMasonry";
 import { DayTimeline } from "@/sections/DayTimeline";
 import { Hero } from "@/sections/Hero";
-import { InspirationAchievements } from "@/sections/InspirationAchievements";
-import { NewsSection } from "@/sections/NewsSection";
-import { PrincipalResources } from "@/sections/PrincipalResources";
+import { ParentCommunityStrip } from "@/sections/ParentCommunityStrip";
 import { Recognitions } from "@/sections/Recognitions";
-import { Testimonials } from "@/sections/Testimonials";
 import { WhySriSri } from "@/sections/WhySriSri";
 
 const structuredData = {
@@ -38,11 +35,8 @@ export default function Home() {
       <WhySriSri />
       <DayTimeline />
       <CampusMasonry />
-      <InspirationAchievements />
       <Recognitions />
-      <Testimonials />
-      <PrincipalResources />
-      <NewsSection />
+      <ParentCommunityStrip />
       <AdmissionsCTA />
     </main>
   );
