@@ -175,12 +175,12 @@ export const stats = [
 ];
 
 export const whyCards = [
-  { title: "Academic Excellence", description: "Conceptual learning, language fluency, and careful assessment.", icon: GraduationCap, image: "/images/academic.svg" },
-  { title: "Human Values", description: "Yoga, meditation, service, and character formation in daily life.", icon: HeartHandshake, image: "/images/values.svg" },
-  { title: "Sports", description: "Facilities and coaching across team and individual disciplines.", icon: Dumbbell, image: "/images/sports.svg" },
-  { title: "Future Ready", description: "AI, robotics, coding, and innovation projects for tomorrow.", icon: Bot, image: "/images/robotics.svg" },
-  { title: "Holistic Development", description: "Leadership, arts, public speaking, and mindful routines.", icon: Sparkles, image: "/images/arts.svg" },
-  { title: "Safe Boarding", description: "Comfortable residences with structured supervision and care.", icon: BedDouble, image: "/images/boarding.svg" },
+  { title: "Academic Excellence", description: "Conceptual learning, language fluency, and careful assessment.", icon: GraduationCap, image: "/images/why/academic-excellence.png" },
+  { title: "Human Values", description: "Yoga, meditation, service, and character formation in daily life.", icon: HeartHandshake, image: "/images/why/human-values.png" },
+  { title: "Sports", description: "Facilities and coaching across team and individual disciplines.", icon: Dumbbell, image: "/images/why/sports.png" },
+  { title: "Future Ready", description: "AI, robotics, coding, and innovation projects for tomorrow.", icon: Bot, image: "/images/why/future-ready.png" },
+  { title: "Holistic Development", description: "Leadership, arts, public speaking, and mindful routines.", icon: Sparkles, image: "/images/why/holistic-development.png" },
+  { title: "Safe Boarding", description: "Comfortable residences with structured supervision and care.", icon: BedDouble, image: "/images/why/safe-boarding.png" },
 ];
 
 export const dayTimeline = [

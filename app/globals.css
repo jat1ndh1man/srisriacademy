@@ -121,137 +121,188 @@ select {
   transform-box: fill-box;
 }
 
-.day-activity-icon:hover .day-icon__breath,
-.day-activity-icon:focus-visible .day-icon__breath {
+.day-activity-icon.is-active {
+  transform: translate3d(0, -0.25rem, 0);
+  border-color: rgba(217, 164, 65, 0.4);
+  background: #fffdf8;
+  color: var(--forest-deep);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 28px 62px -34px rgba(13, 79, 60, 0.62);
+}
+
+.day-activity-icon.is-active .day-activity-icon__glow {
+  opacity: 1;
+}
+
+.day-activity-icon.is-active .day-activity-icon__ring {
+  border-color: rgba(217, 164, 65, 0.24);
+}
+
+.day-timeline-connector {
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.day-timeline-connector__track {
+  position: absolute;
+  inset: 0;
+  border-top: 1px dashed rgba(13, 79, 60, 0.28);
+}
+
+.day-timeline-connector__flow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 46%;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(217, 164, 65, 0), rgba(217, 164, 65, 0.95) 52%, rgba(13, 79, 60, 0.72));
+  opacity: 0;
+  transform: translate3d(-115%, -50%, 0);
+}
+
+.day-timeline-connector__flow::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.18);
+  transform: translate3d(0, -50%, 0);
+}
+
+.day-timeline-connector.is-active .day-timeline-connector__flow {
+  animation: day-timeline-flow var(--day-flow-duration, 900ms) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__breath {
   animation: day-yoga-breathe 1.55s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__yoga-arm,
-.day-activity-icon:focus-visible .day-icon__yoga-arm {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__yoga-arm {
   animation: day-yoga-open 1.55s ease-in-out infinite;
   transform-origin: center bottom;
 }
 
-.day-activity-icon:hover .day-icon__yoga-leg,
-.day-activity-icon:focus-visible .day-icon__yoga-leg {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__yoga-leg {
   animation: day-soft-float 1.55s ease-in-out infinite;
 }
 
-.day-activity-icon:hover .day-icon__fork,
-.day-activity-icon:focus-visible .day-icon__fork {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__fork {
   animation: day-fork-settle 1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: center bottom;
 }
 
-.day-activity-icon:hover .day-icon__knife,
-.day-activity-icon:focus-visible .day-icon__knife {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__knife {
   animation: day-knife-settle 1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: center bottom;
 }
 
-.day-activity-icon:hover .day-icon__spark,
-.day-activity-icon:focus-visible .day-icon__spark {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__spark {
   animation: day-spark-pop 1s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__book-left,
-.day-activity-icon:focus-visible .day-icon__book-left {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__book-left {
   animation: day-book-left 1.25s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: right center;
 }
 
-.day-activity-icon:hover .day-icon__book-right,
-.day-activity-icon:focus-visible .day-icon__book-right {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__book-right {
   animation: day-book-right 1.25s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: left center;
 }
 
-.day-activity-icon:hover .day-icon__book-line,
-.day-activity-icon:focus-visible .day-icon__book-line {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__book-line {
   animation: day-line-reveal 1.25s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__book-spine,
-.day-activity-icon:focus-visible .day-icon__book-spine {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__book-spine {
   animation: day-book-spine 1.25s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__scope-head,
-.day-activity-icon:focus-visible .day-icon__scope-head {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__scope-head {
   animation: day-scope-focus 1.25s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: 37px 24px;
 }
 
-.day-activity-icon:hover .day-icon__bubble-a,
-.day-activity-icon:focus-visible .day-icon__bubble-a {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__bubble-a {
   animation: day-bubble-rise 1.25s ease-in-out infinite;
 }
 
-.day-activity-icon:hover .day-icon__bubble-b,
-.day-activity-icon:focus-visible .day-icon__bubble-b {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__bubble-b {
   animation: day-bubble-rise 1.25s 0.18s ease-in-out infinite;
 }
 
-.day-activity-icon:hover .day-icon__dumbbell,
-.day-activity-icon:focus-visible .day-icon__dumbbell {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__dumbbell {
   animation: day-dumbbell-lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__ground,
-.day-activity-icon:focus-visible .day-icon__ground {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__ground {
   animation: day-ground-shadow 0.9s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__music-note,
-.day-activity-icon:focus-visible .day-icon__music-note {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__music-note {
   animation: day-music-bounce 1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__music-stem,
-.day-activity-icon:focus-visible .day-icon__music-stem {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__music-stem {
   animation: day-music-sway 1s ease-in-out infinite;
   transform-origin: center bottom;
 }
 
-.day-activity-icon:hover .day-icon__sound-a,
-.day-activity-icon:focus-visible .day-icon__sound-a {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__sound-a {
   animation: day-sound-wave 1s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__sound-b,
-.day-activity-icon:focus-visible .day-icon__sound-b {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__sound-b {
   animation: day-sound-wave 1s 0.1s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__moon,
-.day-activity-icon:focus-visible .day-icon__moon {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__moon {
   animation: day-moon-rock 1.8s ease-in-out infinite;
   transform-origin: center;
 }
 
-.day-activity-icon:hover .day-icon__sleep-a,
-.day-activity-icon:focus-visible .day-icon__sleep-a {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__sleep-a {
   animation: day-zzz-rise 1.45s ease-in-out infinite;
 }
 
-.day-activity-icon:hover .day-icon__sleep-b,
-.day-activity-icon:focus-visible .day-icon__sleep-b {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__sleep-b {
   animation: day-zzz-rise 1.45s 0.2s ease-in-out infinite;
 }
 
-.day-activity-icon:hover .day-icon__star,
-.day-activity-icon:focus-visible .day-icon__star {
+.day-activity-icon:is(:hover, :focus-visible, .is-active) .day-icon__star {
   animation: day-star-twinkle 1.45s ease-in-out infinite;
   transform-origin: center;
+}
+
+@keyframes day-timeline-flow {
+  0% {
+    opacity: 0;
+    transform: translate3d(-115%, -50%, 0);
+  }
+  12%,
+  86% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(250%, -50%, 0);
+  }
 }
 
 @keyframes day-yoga-breathe {
