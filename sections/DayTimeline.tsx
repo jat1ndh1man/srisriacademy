@@ -154,8 +154,12 @@ export function DayTimeline() {
   }, []);
 
   return (
-    <section id="day-at-sri-sri-academy" className="overflow-hidden bg-[#eaf6ff] py-20" ref={ref}>
-      <div className="container-lux">
+    <section id="day-at-sri-sri-academy" className="relative isolate overflow-hidden bg-[#eaf6ff] py-20" ref={ref}>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-20 right-0 z-0 h-[22rem] w-[13rem] bg-[url('/images/day/schoolgirl.png')] bg-contain bg-right-bottom bg-no-repeat opacity-20 sm:-bottom-28 sm:h-[28rem] sm:w-[17rem] sm:opacity-25 lg:-bottom-56 lg:h-[42rem] lg:w-[25rem] lg:opacity-35 xl:-bottom-72 xl:h-[48rem] xl:w-[29rem] xl:opacity-45"
+      />
+      <div className="container-lux relative z-10">
         <SectionTitle align="center" title="A Day at Sri Sri Academy" description="A calm rhythm of mindfulness, learning, play, creativity, and supervised study." />
         <div className="-mx-4 mt-9 snap-x overflow-x-auto px-4 pb-4 pt-7 [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 [&::-webkit-scrollbar]:hidden">
           <div className="grid min-w-[980px] grid-cols-9 items-start gap-4">
