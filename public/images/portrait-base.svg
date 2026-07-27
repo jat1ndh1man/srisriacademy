@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Portrait placeholder">
+  <rect width="900" height="900" fill="#f6f2ea"/>
+  <circle cx="450" cy="290" r="132" fill="#d9a441" opacity=".72"/>
+  <path d="M180 782c38-196 154-294 270-294s232 98 270 294" fill="#0d4f3c"/>
+  <path d="M315 300c32-122 238-122 270 0 16 62-2 154-42 194-48 48-138 48-186 0-40-40-58-132-42-194z" fill="#fffdf8"/>
+  <path d="M270 285c58-128 296-126 360 4-26-20-76-24-144-14-92 14-158 12-216 10z" fill="#07382c"/>
+  <text x="104" y="116" fill="#07382c" font-family="Arial, sans-serif" font-size="42" font-weight="700">Sri Sri Academy</text>
+</svg>

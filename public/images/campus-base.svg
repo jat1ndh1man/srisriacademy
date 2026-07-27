@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Sri Sri Academy campus">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="0.46" stop-color="#f4ddb0"/>
+      <stop offset="1" stop-color="#a8d8c4"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d4f3c"/>
+      <stop offset="1" stop-color="#d9a441"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <path d="M0 470c170-94 290-98 455 0s331 92 501 0c108-58 183-76 244-72v402H0z" fill="#0d4f3c" opacity=".18"/>
+  <path d="M0 605c196-100 390-99 582 3s396 100 618-18v210H0z" fill="url(#ground)"/>
+  <g transform="translate(210 300)">
+    <rect x="0" y="150" width="780" height="210" rx="18" fill="#fffdf8"/>
+    <rect x="48" y="84" width="684" height="90" rx="12" fill="#f6f2ea"/>
+    <path d="M30 150 390 0l360 150z" fill="#d9a441"/>
+    <g fill="#0d4f3c" opacity=".86">
+      <rect x="70" y="190" width="96" height="58" rx="8"/>
+      <rect x="220" y="190" width="96" height="58" rx="8"/>
+      <rect x="370" y="190" width="96" height="58" rx="8"/>
+      <rect x="520" y="190" width="96" height="58" rx="8"/>
+      <rect x="655" y="190" width="58" height="170" rx="12"/>
+    </g>
+  </g>
+  <circle cx="900" cy="155" r="64" fill="#d9a441" opacity=".55"/>
+  <text x="78" y="118" fill="#07382c" font-family="Arial, sans-serif" font-size="34" font-weight="700">Sri Sri Academy Siliguri</text>
+</svg>

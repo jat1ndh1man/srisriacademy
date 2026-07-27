@@ -1,0 +1,15 @@
+:root {
+  --forest: #0d4f3c;
+  --forest-deep: #07382c;
+  --gold: #d9a441;
+  --cream: #f6f2ea;
+  --ivory: #fffdf8;
+  --charcoal: #1f2937;
+  --muted: #6b7280;
+  --radius-luxury: 24px;
+}
+
+::selection {
+  background: rgba(217, 164, 65, 0.32);
+  color: var(--forest-deep);
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Sports complex">
+  <rect width="1200" height="800" fill="#dfeeda"/>
+  <path d="M0 410h1200v390H0z" fill="#0d4f3c"/>
+  <path d="M120 610c224-90 386-90 610 0 150 60 265 66 350 20" fill="none" stroke="#fffdf8" stroke-width="12" opacity=".7"/>
+  <circle cx="602" cy="520" r="106" fill="none" stroke="#fffdf8" stroke-width="10" opacity=".65"/>
+  <rect x="90" y="450" width="1020" height="300" rx="44" fill="none" stroke="#d9a441" stroke-width="8" opacity=".75"/>
+  <circle cx="870" cy="245" r="82" fill="#d9a441" opacity=".55"/>
+  <text x="92" y="134" fill="#07382c" font-family="Arial, sans-serif" font-size="34" font-weight="700">Sports Excellence</text>
+</svg>

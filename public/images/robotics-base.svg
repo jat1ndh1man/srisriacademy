@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Robotics and innovation lab">
+  <rect width="1200" height="800" fill="#eef5f2"/>
+  <rect x="126" y="116" width="948" height="568" rx="48" fill="#fffdf8"/>
+  <g fill="#0d4f3c">
+    <rect x="420" y="258" width="360" height="260" rx="44"/>
+    <rect x="500" y="180" width="200" height="110" rx="32"/>
+    <circle cx="526" cy="378" r="36" fill="#fffdf8"/>
+    <circle cx="674" cy="378" r="36" fill="#fffdf8"/>
+    <rect x="514" y="456" width="172" height="24" rx="12" fill="#d9a441"/>
+  </g>
+  <path d="M310 380h108M782 380h108M600 172V96" stroke="#d9a441" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="600" cy="84" r="22" fill="#d9a441"/>
+  <text x="132" y="154" fill="#07382c" font-family="Arial, sans-serif" font-size="32" font-weight="700">Future Ready Learning</text>
+</svg>

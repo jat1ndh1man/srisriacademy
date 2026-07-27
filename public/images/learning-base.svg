@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Learning environment">
+  <rect width="1200" height="800" fill="#f6f2ea"/>
+  <rect x="92" y="90" width="1016" height="620" rx="42" fill="#fffdf8"/>
+  <path d="M150 548c144-128 298-130 463-7 158 118 295 102 437-47v216H150z" fill="#0d4f3c" opacity=".16"/>
+  <g transform="translate(220 210)" fill="none" stroke="#0d4f3c" stroke-width="22" stroke-linecap="round">
+    <path d="M0 300c88-80 176-80 264 0s176 80 264 0 176-80 264 0"/>
+    <path d="M100 152h575"/>
+    <path d="M100 70h410"/>
+  </g>
+  <circle cx="908" cy="236" r="92" fill="#d9a441" opacity=".5"/>
+  <circle cx="786" cy="354" r="34" fill="#0d4f3c" opacity=".22"/>
+  <text x="166" y="150" fill="#07382c" font-family="Arial, sans-serif" font-size="32" font-weight="700">Learning Beyond Classrooms</text>
+</svg>

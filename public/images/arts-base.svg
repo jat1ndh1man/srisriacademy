@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Creative arts">
+  <rect width="1200" height="800" fill="#fff3e3"/>
+  <path d="M0 612c170-98 330-118 480-60 192 74 316 64 510-58 84-52 154-74 210-74v380H0z" fill="#d9a441" opacity=".34"/>
+  <g transform="translate(390 180)" fill="none" stroke="#0d4f3c" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 0v330"/>
+    <path d="M300 0l170 48v92l-170-48"/>
+    <circle cx="228" cy="336" r="70"/>
+  </g>
+  <circle cx="228" cy="246" r="96" fill="#0d4f3c" opacity=".12"/>
+  <text x="90" y="134" fill="#07382c" font-family="Arial, sans-serif" font-size="34" font-weight="700">Creative Arts</text>
+</svg>

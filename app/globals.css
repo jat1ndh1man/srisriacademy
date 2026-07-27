@@ -1,0 +1,436 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme {
+  --color-forest: #0d4f3c;
+  --color-forest-deep: #07382c;
+  --color-gold: #d9a441;
+  --color-ivory: #fffdf8;
+  --color-cream: #f6f2ea;
+  --color-charcoal: #1f2937;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--ivory);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(217, 164, 65, 0.12), transparent 30rem),
+    linear-gradient(180deg, var(--ivory) 0%, #fbf6ea 44%, var(--ivory) 100%);
+  color: var(--charcoal);
+  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ivory;
+}
+
+.container-lux {
+  @apply mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8;
+}
+
+.glass-panel {
+  @apply border border-white/50 bg-white/70 shadow-[0_24px_70px_-34px_rgba(13,79,60,0.45)] backdrop-blur-xl;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 24px 70px -34px rgba(13, 79, 60, 0.45);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0);
+}
+
+.image-soft-mask {
+  mask-image: linear-gradient(180deg, #000 74%, transparent 100%);
+}
+
+@keyframes logo-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.day-activity-icon svg * {
+  transform-box: fill-box;
+}
+
+.day-activity-icon:hover .day-icon__breath,
+.day-activity-icon:focus-visible .day-icon__breath {
+  animation: day-yoga-breathe 1.55s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__yoga-arm,
+.day-activity-icon:focus-visible .day-icon__yoga-arm {
+  animation: day-yoga-open 1.55s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.day-activity-icon:hover .day-icon__yoga-leg,
+.day-activity-icon:focus-visible .day-icon__yoga-leg {
+  animation: day-soft-float 1.55s ease-in-out infinite;
+}
+
+.day-activity-icon:hover .day-icon__fork,
+.day-activity-icon:focus-visible .day-icon__fork {
+  animation: day-fork-settle 1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: center bottom;
+}
+
+.day-activity-icon:hover .day-icon__knife,
+.day-activity-icon:focus-visible .day-icon__knife {
+  animation: day-knife-settle 1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: center bottom;
+}
+
+.day-activity-icon:hover .day-icon__spark,
+.day-activity-icon:focus-visible .day-icon__spark {
+  animation: day-spark-pop 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__book-left,
+.day-activity-icon:focus-visible .day-icon__book-left {
+  animation: day-book-left 1.25s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: right center;
+}
+
+.day-activity-icon:hover .day-icon__book-right,
+.day-activity-icon:focus-visible .day-icon__book-right {
+  animation: day-book-right 1.25s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: left center;
+}
+
+.day-activity-icon:hover .day-icon__book-line,
+.day-activity-icon:focus-visible .day-icon__book-line {
+  animation: day-line-reveal 1.25s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__book-spine,
+.day-activity-icon:focus-visible .day-icon__book-spine {
+  animation: day-book-spine 1.25s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__scope-head,
+.day-activity-icon:focus-visible .day-icon__scope-head {
+  animation: day-scope-focus 1.25s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: 37px 24px;
+}
+
+.day-activity-icon:hover .day-icon__bubble-a,
+.day-activity-icon:focus-visible .day-icon__bubble-a {
+  animation: day-bubble-rise 1.25s ease-in-out infinite;
+}
+
+.day-activity-icon:hover .day-icon__bubble-b,
+.day-activity-icon:focus-visible .day-icon__bubble-b {
+  animation: day-bubble-rise 1.25s 0.18s ease-in-out infinite;
+}
+
+.day-activity-icon:hover .day-icon__dumbbell,
+.day-activity-icon:focus-visible .day-icon__dumbbell {
+  animation: day-dumbbell-lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__ground,
+.day-activity-icon:focus-visible .day-icon__ground {
+  animation: day-ground-shadow 0.9s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__music-note,
+.day-activity-icon:focus-visible .day-icon__music-note {
+  animation: day-music-bounce 1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__music-stem,
+.day-activity-icon:focus-visible .day-icon__music-stem {
+  animation: day-music-sway 1s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.day-activity-icon:hover .day-icon__sound-a,
+.day-activity-icon:focus-visible .day-icon__sound-a {
+  animation: day-sound-wave 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__sound-b,
+.day-activity-icon:focus-visible .day-icon__sound-b {
+  animation: day-sound-wave 1s 0.1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__moon,
+.day-activity-icon:focus-visible .day-icon__moon {
+  animation: day-moon-rock 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.day-activity-icon:hover .day-icon__sleep-a,
+.day-activity-icon:focus-visible .day-icon__sleep-a {
+  animation: day-zzz-rise 1.45s ease-in-out infinite;
+}
+
+.day-activity-icon:hover .day-icon__sleep-b,
+.day-activity-icon:focus-visible .day-icon__sleep-b {
+  animation: day-zzz-rise 1.45s 0.2s ease-in-out infinite;
+}
+
+.day-activity-icon:hover .day-icon__star,
+.day-activity-icon:focus-visible .day-icon__star {
+  animation: day-star-twinkle 1.45s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes day-yoga-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -1.5px, 0) scale(1.04);
+  }
+}
+
+@keyframes day-yoga-open {
+  0%,
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-2deg) translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes day-soft-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 1px, 0);
+  }
+}
+
+@keyframes day-fork-settle {
+  0%,
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  45% {
+    transform: rotate(-8deg) translate3d(-1px, -2px, 0);
+  }
+}
+
+@keyframes day-knife-settle {
+  0%,
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  45% {
+    transform: rotate(7deg) translate3d(1px, -2px, 0);
+  }
+}
+
+@keyframes day-spark-pop {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes day-book-left {
+  0%,
+  100% {
+    transform: skewY(0deg) translate3d(0, 0, 0);
+  }
+  48% {
+    transform: skewY(5deg) translate3d(-3px, -1px, 0);
+  }
+}
+
+@keyframes day-book-right {
+  0%,
+  100% {
+    transform: skewY(0deg) translate3d(0, 0, 0);
+  }
+  48% {
+    transform: skewY(-5deg) translate3d(3px, -1px, 0);
+  }
+}
+
+@keyframes day-line-reveal {
+  0%,
+  100% {
+    transform: scaleX(0.72);
+    opacity: 0.55;
+  }
+  48% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes day-book-spine {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  48% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+@keyframes day-scope-focus {
+  0%,
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-7deg) translate3d(-1px, 1px, 0);
+  }
+}
+
+@keyframes day-bubble-rise {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate3d(0, 4px, 0) scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, -5px, 0) scale(1.05);
+  }
+}
+
+@keyframes day-dumbbell-lift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  45% {
+    transform: translate3d(0, -7px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes day-ground-shadow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  45% {
+    opacity: 0.45;
+    transform: scaleX(0.72);
+  }
+}
+
+@keyframes day-music-bounce {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-1px, -5px, 0) scale(1.06);
+  }
+}
+
+@keyframes day-music-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes day-sound-wave {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(-2px, 0, 0) scale(1.08);
+  }
+}
+
+@keyframes day-moon-rock {
+  0%,
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-6deg) translate3d(-2px, 1px, 0);
+  }
+}
+
+@keyframes day-zzz-rise {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate3d(0, 3px, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes day-star-twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

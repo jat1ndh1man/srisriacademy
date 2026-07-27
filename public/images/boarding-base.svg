@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Residential boarding">
+  <rect width="1200" height="800" fill="#f6f2ea"/>
+  <rect x="120" y="140" width="960" height="520" rx="42" fill="#fffdf8"/>
+  <rect x="210" y="290" width="780" height="214" rx="28" fill="#0d4f3c" opacity=".9"/>
+  <rect x="250" y="250" width="242" height="150" rx="24" fill="#d9a441"/>
+  <rect x="708" y="250" width="242" height="150" rx="24" fill="#d9a441"/>
+  <rect x="250" y="430" width="700" height="74" rx="22" fill="#07382c"/>
+  <circle cx="880" cy="170" r="70" fill="#d9a441" opacity=".42"/>
+  <text x="162" y="202" fill="#07382c" font-family="Arial, sans-serif" font-size="32" font-weight="700">Residential Boarding</text>
+</svg>
