@@ -127,7 +127,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "A moving glimpse of student life, open spaces, activity zones, and the daily rhythm of school.",
     image: "/images/hero/campus.png",
-    video: "https://assets.mixkit.co/videos/4519/4519-720.mp4",
+    video: "https://videos.pexels.com/video-files/8088461/8088461-hd_1920_1080_30fps.mp4",
     poster: "/images/hero/campus.png",
   },
 ];

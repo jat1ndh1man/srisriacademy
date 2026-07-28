@@ -17,6 +17,7 @@ const highlightedHeroTitles: Record<string, { lead: string; accent: string }> = 
   sports: { lead: "Strength With", accent: "Grace" },
   arts: { lead: "Music, Dance, and", accent: "Expression" },
   learning: { lead: "Inquiry, Nature, and", accent: "Imagination" },
+  videos: { lead: "Learning Comes Alive", accent: "Across Campus" },
 };
 
 const topperCards = [
@@ -141,7 +142,7 @@ export function Hero() {
             className={cn(
               "absolute inset-0",
               isVideo
-                ? "bg-[linear-gradient(90deg,rgba(7,56,44,0.74)_0%,rgba(7,56,44,0.48)_34%,rgba(7,56,44,0.16)_68%,rgba(7,56,44,0.34)_100%)]"
+                ? "bg-[linear-gradient(90deg,rgba(255,253,248,0.74)_0%,rgba(255,253,248,0.52)_32%,rgba(255,253,248,0.08)_60%,rgba(255,244,219,0.22)_100%)]"
                 : isCampus
                   ? "bg-[linear-gradient(90deg,rgba(255,253,248,0.66)_0%,rgba(255,253,248,0.36)_34%,rgba(255,253,248,0.04)_60%,rgba(255,244,219,0.16)_100%)]"
                   : isToppers
@@ -235,11 +236,10 @@ export function Hero() {
                 className="max-w-4xl pt-10"
               >
                 <div>
-                  <p className={cn("text-xs font-bold uppercase tracking-[0.32em]", isVideo ? "text-white/78" : "text-forest/78")}>{slide.eyebrow}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.32em] text-forest/78">{slide.eyebrow}</p>
                   <h1
                     className={cn(
-                      "mt-5 max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-tight sm:text-6xl lg:text-8xl",
-                      isVideo ? "text-white" : "text-forest",
+                      "mt-5 max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-tight text-forest sm:text-6xl lg:text-8xl",
                     )}
                   >
                     {highlightedTitle ? (
@@ -250,7 +250,7 @@ export function Hero() {
                       slide.title
                     )}
                   </h1>
-                  <p className={cn("mt-6 max-w-2xl text-base font-medium leading-8 md:text-lg", isVideo ? "text-white/78" : "text-charcoal/72")}>
+                  <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-charcoal/72 md:text-lg">
                     {slide.description}
                   </p>
                   <div className={cn("mt-8 flex flex-col gap-3 sm:flex-row", isCampus && "lg:mt-6")}>
@@ -258,7 +258,7 @@ export function Hero() {
                       <MapPinned className="h-4 w-4" />
                       Find a Campus Near You
                     </Button>
-                    <Button variant={isVideo ? "light" : "outline"} size="lg">
+                    <Button variant="outline" size="lg">
                       <ArrowDownToLine className="h-4 w-4" />
                       Download Prospectus
                     </Button>
